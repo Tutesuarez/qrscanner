@@ -1,21 +1,10 @@
-// import React from 'react';
-
-// const Menu = ({ onSelectOption }) => (
-//   <nav>
-//     <button onClick={() => onSelectOption('scan')}>Escanear QR</button>
-//     <button onClick={() => onSelectOption('list')}>Ver Lista de Códigos</button>
-//     <button onClick={() => onSelectOption('add')}>Cargar Código</button>
-//   </nav>
-// );
-
-// export default Menu;
-
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import './Menu.css';
 
 const Menu = ({ setActivePage }) => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand href="#">Gestión de Códigos QR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
