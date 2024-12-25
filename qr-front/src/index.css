@@ -1,0 +1,36 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Menu principal */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.menu button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: #45a049;
+}
+
+.menu button:focus {
+  outline: none;
+}
+
+/* Estilo para cuando estamos en una pantalla pequeña */
+@media (max-width: 600px) {
+  .menu button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

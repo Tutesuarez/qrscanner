@@ -1,0 +1,59 @@
+/* Estilo para la barra de menú con fondo gris topo */
+.navbar {
+    background-color: #2f2f2f !important;  /* Gris topo */
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    color: #fff !important; /* Texto blanco */
+  }
+  
+  .navbar .nav-link {
+    color: #fff !important; /* Enlaces blancos */
+    font-size: 18px;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #4caf50 !important; /* Verde cuando el enlace es hovered */
+  }
+  
+  /* Estilo para el botón de menú hamburguesa (en pantallas pequeñas) */
+  .navbar-toggler {
+    background-color: #4caf50 !important; /* Botón hamburguesa verde */
+    border: none; /* Elimina cualquier borde del botón */
+    padding: 3px; /* Elimina cualquier padding que podría crear espacio alrededor */
+  }
+  
+  /* Estilo para las rayas blancas del icono hamburguesa */
+  .navbar-toggler-icon {
+    background-color: transparent !important; /* Fondo transparente */
+    border: none;
+    position: relative;
+    width: 40px; /* Ajusta el tamaño */
+    height: 35px; /* Ajusta el tamaño */
+  }
+  
+  /* .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after, */
+  .navbar-toggler-icon span {
+    content: '';
+    position: absolute;
+    height: 4px; /* Grosor de las líneas */
+    width: 100%;
+    background-color: white; /* Líneas blancas */
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggler-icon::before {
+    top: 0; /* Mueve la primera línea a la parte superior */
+  }
+  
+  .navbar-toggler-icon::after {
+    bottom: 0; /* Mueve la tercera línea a la parte inferior */
+  }
+  
+  .navbar-toggler-icon span {
+    top: 50%;
+    transform: translateY(-50%); /* Centra la línea del medio */
+  }
+  
