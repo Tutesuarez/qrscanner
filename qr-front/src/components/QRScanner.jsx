@@ -27,7 +27,7 @@ const QRScanner = () => {
         setScannedCode(decodedText);
 
         // Consultar al backend para verificar si hay un match
-        fetch(`http://localhost:3000/api/qr/check-code`, {
+        fetch(`https://qrscanner-back.onrender.com/api/qr/check-code`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ code: decodedText }),

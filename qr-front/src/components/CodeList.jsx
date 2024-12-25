@@ -6,7 +6,7 @@ const CodeList = () => {
   const [codes, setCodes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/qr/get-codes')
+    axios.get('https://qrscanner-back.onrender.com/api/qr/get-codes')
       .then(response => {
         console.log('Datos obtenidos:', response.data); // Verifica los datos
         if (response.data && response.data.success) {
@@ -20,7 +20,7 @@ const CodeList = () => {
       });
   }, []);
   const handleDeleteCode = (id) => {
-    axios.delete(`http://localhost:3000/api/qr/${id}`)
+    axios.delete(`https://qrscanner-back.onrender.com/api/qr/${id}`)
       .then(() => {
         setCodes(codes.filter(code => code._id !== id));
         alert('Código eliminado.');
@@ -32,7 +32,7 @@ const CodeList = () => {
   };
 
   const handleDeleteAllCodes = () => {
-    axios.delete('http://localhost:3000/api/qr')
+    axios.delete('https://qrscanner-back.onrender.com/api/qr')
       .then(() => {
         setCodes([]);
         alert('Todos los códigos fueron eliminados.');

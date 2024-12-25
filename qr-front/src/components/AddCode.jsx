@@ -20,7 +20,7 @@ const AddCode = () => {
       return;
     }
 
-    axios.post('http://localhost:3000/api/qr/add-code', { code })
+    axios.post('https://qrscanner-back.onrender.com/api/qr/add-code', { code })
       .then(() => {
         setMessage('Código agregado exitosamente.');
         setAlertVariant('success');
