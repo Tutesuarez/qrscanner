@@ -14,7 +14,7 @@ dotenv.config()
 // Conexión a MongoDB
 const connectToDatabase = async () => {
 
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/mydb')
+    await mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('Conectado a MongoDB Atlas'))
     .catch(err => console.error('Error al conectar con MongoDB:', err));
 

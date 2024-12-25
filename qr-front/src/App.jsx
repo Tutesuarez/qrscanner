@@ -12,7 +12,7 @@ const App = () => {
     <div className="App">
       <Menu setActivePage={setActivePage} /> {/* Menu para cambiar entre vistas */}
 
-      <Container className="mt-5">
+      <Container className="mt-lg-5">
         {/* Condicional para mostrar la vista según la opción seleccionada */}
         {activePage === 'scanner' && <QRScanner />}
         {activePage === 'addCode' && <AddCode />}

@@ -77,12 +77,27 @@ const QRScanner = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-lg-5">
       <Row>
         <Col>
           <h2 className="text-center">Escanear bolsa</h2>
         </Col>
       </Row>
+      {/* Área para mostrar la cámara */}
+      <Row className="justify-content-center mt-3">
+        <Col md={6} id="reader" style={{ width: '100%' }}></Col>
+      </Row>
+
+      {/* Mostrar el código escaneado */}
+      {scannedCode && (
+        <Row className="mt-3">
+          <Col>
+            <p className="text-center">
+              <strong>Código Escaneado:</strong> {scannedCode}
+            </p>
+          </Col>
+        </Row>
+      )}
 
       {/* Mostrar mensajes de alerta */}
       <Row className="justify-content-center mt-3">
@@ -126,22 +141,6 @@ const QRScanner = () => {
           )}
         </Col>
       </Row>
-
-      {/* Área para mostrar la cámara */}
-      <Row className="justify-content-center mt-3">
-        <Col md={6} id="reader" style={{ width: '100%' }}></Col>
-      </Row>
-
-      {/* Mostrar el código escaneado */}
-      {scannedCode && (
-        <Row className="mt-3">
-          <Col>
-            <p className="text-center">
-              <strong>Código Escaneado:</strong> {scannedCode}
-            </p>
-          </Col>
-        </Row>
-      )}
     </Container>
   );
 };

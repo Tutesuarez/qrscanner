@@ -44,7 +44,7 @@ const CodeList = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-lg-5">
     <Row className="mb-4">
       <Col>
         <h2 className="text-center">Lista de Bolsas</h2>
