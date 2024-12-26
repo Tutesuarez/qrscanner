@@ -38,6 +38,13 @@ The project is divided into two main parts:
 
 ---
 
+## Try It Out
+
+You can test the application live at:  
+👉 [QR Code Scanner App](https://qrscanner-front.onrender.com) 👈
+
+---
+
 ## **How to Set Up the Project**
 
 ### **Prerequisites**
