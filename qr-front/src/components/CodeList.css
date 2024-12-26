@@ -1,0 +1,15 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* O ajusta según el contenedor */
+  flex-direction: column;
+}
+
+.spinner-container p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #6c757d; /* Gris Bootstrap */
+}
+
+  

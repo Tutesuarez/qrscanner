@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {  Button, ListGroup, Container, Row, Col } from 'react-bootstrap';
+import {  Button, ListGroup, Container, Row, Col, Spinner } from 'react-bootstrap';
+
 
 const CodeList = () => {
   const [codes, setCodes] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Estado de carga
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get('https://qrscanner-back.onrender.com/api/qr/get-codes')
       .then(response => {
         console.log('Datos obtenidos:', response.data); // Verifica los datos
@@ -17,8 +20,12 @@ const CodeList = () => {
       })
       .catch(error => {
         console.error('Error al obtener los códigos:', error);
-      });
+      })
+  .finally(() => {
+    setIsLoading(false); // Desactivar spinner
+  });
   }, []);
+
   const handleDeleteCode = (id) => {
     axios.delete(`https://qrscanner-back.onrender.com/api/qr/${id}`)
       .then(() => {
@@ -52,9 +59,17 @@ const CodeList = () => {
     </Row>
     <Row>
       <Col>
-        {codes.length === 0 ? (
-          <p className="text-center text-muted">No hay códigos almacenados.</p>
-        ) : (
+        {isLoading ? (
+            // Spinner mientras se cargan los datos
+            <div className="text-center">
+              <Spinner animation="border" role="status" variant="succes">
+                <span className="visually-hidden">Cargando...</span>
+              </Spinner>
+              <p>Cargando datos...</p>
+            </div>
+          ) : codes.length === 0 ? (
+            <p className="text-center text-muted">No hay códigos almacenados.</p>
+          ) : (
           <ListGroup>
             {codes.map((code, index) => (
               <ListGroup.Item key={code._id} className={`d-flex justify-content-between align-items-center ${
